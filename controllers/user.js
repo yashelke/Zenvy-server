@@ -1,7 +1,7 @@
 // controller for register a user
 
 import TryCatch from "../utils/TryCatch.js";
-import { OTP } from "../models/otp.js";
+import { OTP } from "../models/Otp.js";
 import sendOtp from "../utils/sendOtp.js";
 // import {User } from "../models/user.js";
 import { User } from "../models/User.js"; // ✅ named import
