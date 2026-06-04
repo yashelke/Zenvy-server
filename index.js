@@ -6,6 +6,7 @@ import productRoutes from "./routes/product.js";
 import cartRoutes from "./routes/cart.js";
 import addressRoutes from "./routes/address.js";
 import orderRoutes from "./routes/order.js";
+import favouriteRoutes from "./routes/favourite.js";
 import cors from "cors";
 // import axios from "axios";
 
@@ -47,6 +48,7 @@ app.use("/api", productRoutes);
 app.use("/api", cartRoutes);
 app.use("/api", addressRoutes);
 app.use("/api", orderRoutes);
+app.use("/api",favouriteRoutes);
 
 
 // app.get("/", (req, res) => {
