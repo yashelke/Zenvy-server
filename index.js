@@ -7,6 +7,7 @@ import cartRoutes from "./routes/cart.js";
 import addressRoutes from "./routes/address.js";
 import orderRoutes from "./routes/order.js";
 import cors from "cors";
+import axios from "axios";
 
 import cloudinary from "cloudinary";
 
@@ -19,6 +20,24 @@ cloudinary.v2.config({
 })
 
 const app = express();
+
+
+
+const url = `hhttps://zenvy-server-fwxd.onrender.com`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloded");
+    })
+    .catch((error) => {
+      console.error(`Error : ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
 
 app.use(express.json());
 app.use(cors());
