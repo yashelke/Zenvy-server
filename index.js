@@ -23,14 +23,14 @@ const app = express();
 
 
 
-const url = `hhttps://zenvy-server-fwxd.onrender.com`;
+const url = `https://zenvy-server-fwxd.onrender.com`;
 const interval = 30000;
 
 function reloadWebsite() {
   axios
     .get(url)
     .then((response) => {
-      console.log("website reloded");
+      console.log("website reloaded");
     })
     .catch((error) => {
       console.error(`Error : ${error.message}`);
@@ -55,7 +55,9 @@ app.use("/api", orderRoutes);
 
 const port = process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`Server is running on port http://localhost:${port}`);
-  connectDB();
+(async () => {
+  await connectDB();
+  app.listen(port, () => {
+    console.log(`Server is running on port http://localhost:${port}`);
+  });
 });
