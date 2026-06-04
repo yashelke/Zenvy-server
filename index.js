@@ -37,7 +37,7 @@ const app = express();
 //     });
 // }
 
-setInterval(reloadWebsite, interval);
+// setInterval(reloadWebsite, interval);
 
 app.use(express.json());
 app.use(cors());
