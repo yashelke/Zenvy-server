@@ -7,7 +7,7 @@ import cartRoutes from "./routes/cart.js";
 import addressRoutes from "./routes/address.js";
 import orderRoutes from "./routes/order.js";
 import cors from "cors";
-import axios from "axios";
+// import axios from "axios";
 
 import cloudinary from "cloudinary";
 
@@ -23,19 +23,19 @@ const app = express();
 
 
 
-const url = `https://zenvy-server-fwxd.onrender.com`;
-const interval = 30000;
+// const url = `https://zenvy-server-fwxd.onrender.com`;
+// const interval = 30000;
 
-function reloadWebsite() {
-  axios
-    .get(url)
-    .then((response) => {
-      console.log("website reloaded");
-    })
-    .catch((error) => {
-      console.error(`Error : ${error.message}`);
-    });
-}
+// function reloadWebsite() {
+//   axios
+//     .get(url)
+//     .then((response) => {
+//       console.log("website reloaded");
+//     })
+//     .catch((error) => {
+//       console.error(`Error : ${error.message}`);
+//     });
+// }
 
 setInterval(reloadWebsite, interval);
 
