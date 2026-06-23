@@ -78,6 +78,7 @@ const sendOrderConfirmation = async (email, subject, orderId, products, totalAmo
         <h1>Order Confirmation</h1>
         <p>Dear ${email},</p>
         <p>Your order (ID: <strong>${orderId}</strong>) has been successfully placed.</p>
+        <p>Placed On:- ${new Date().toLocaleDateString()}</p>
         <table>
             <thead>
                 <tr>

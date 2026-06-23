@@ -187,32 +187,46 @@ export const getStats = TryCatch(async(req , res) =>{
 
     }
  
-
-
   const cod = await Order.find({method:"cod"}).countDocuments();
 
   const online = await Order.find({method:"online"}).countDocuments();
 
-  const products = await Product.find()
+  const products = await Product.find();
 
   const data = products.map((prod) =>{
-
-  return({
-    name:prod.title,
+    return({
+      name:prod.title,
       sold:prod.sold,
-  })
-
- 
-      
-
+    })
   });
+
+  const totalProducts = await Product.countDocuments();
+  const totalUsers = await User.countDocuments();
+  const totalShipped = await Order.countDocuments({ status: "Shipped" });
+  const totalPending = await Order.countDocuments({ status: "Pending" });
+  const totalDelivered = await Order.countDocuments({ status: "Delivered" });
+
+  const totalRevenueResult = await Order.aggregate([
+    {
+      $group: {
+        _id: null,
+        total: { $sum: "$subTotal" },
+      },
+    },
+  ]);
+  const totalRevenue = totalRevenueResult[0]?.total || 0;
 
   res.json({
     cod,
     online,
     data,
+    totalProducts,
+    totalUsers,
+    totalShipped,
+    totalPending,
+    totalDelivered,
+    totalRevenue,
   });
-
 
 })
 
