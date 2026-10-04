@@ -56,7 +56,7 @@ const sendOtp = async (email, subject, otp) => {
   // </body>
   // </html>`;
 
-// Improvised HTML email template with better styling and structure
+  // Improvised HTML email template with better styling and structure
 
   const html = `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -165,7 +165,7 @@ const sendOtp = async (email, subject, otp) => {
           <tr>
             <td align="center" style="padding:24px 16px 0 16px; font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:12px; line-height:20px; color:#8a909c;">
               This is an automated message, please do not reply.<br />
-              &copy; ${new Date().getFullYear()} <strong style="color:#5b6270;">Your Company Name</strong>. All rights reserved.
+              &copy; ${new Date().getFullYear()} <strong style="color:#5b6270;">Zenvy</strong>. All rights reserved.
             </td>
           </tr>
 
